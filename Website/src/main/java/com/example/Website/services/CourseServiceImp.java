@@ -48,7 +48,7 @@ public class CourseServiceImp implements CourseService{
         return courseRepository.findById(courseId).map(existingCourse -> {
             Optional.ofNullable(course.getCourseName()).ifPresent(existingCourse::setCourseName);
             return courseRepository.save(existingCourse);
-        }).orElseThrow(() -> new RuntimeException("Book does not exist"));
+        }).orElseThrow(() -> new RuntimeException("Course does not exist"));
     }
 
     @Override
